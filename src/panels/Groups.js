@@ -48,6 +48,11 @@ function Groups ({ id, selectGroup, onBack, setPopout, organisation }) {
 
     useEffect(() =>
     {
+        if (!search)
+        {
+            return;
+        }
+
         fetch('https://api.xn----7sbaba9cb6bk0m.xn--p1ai/hakaton/organisations/' + organisation.id + '/' + encodeURIComponent(search)).then(result =>
         {
             result.json().then(result =>

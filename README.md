@@ -1,34 +1,16 @@
-[<img width="134" src="https://vk.com/images/apps/mini_apps/vk_mini_apps_logo.svg">](https://vk.com/services)
+# Какаая пара -  VK Mini App [![npm][npm]][npm-url] [![deps][deps]][deps-url]
 
-# Create VK Mini App [![npm][npm]][npm-url] [![deps][deps]][deps-url]
+## КАК ЗАПУСТИТЬ
 
-## How to install
+TG - BEREZH
 
-### Create VK Mini App with gh-pages deploy
+1. npm install - устанавливаем зависимости (вызывается из корневой директории)
+2. npm start - запускаем dev-сервер
+3. ./ngrok http https://localhost:10888 -host-header="localhost:10888" - запускам ngrock. Меняйте порты, если надо
+4. После запуска ngrock появятся 3 ссылки в консоли. Копируйте третью ссылку вида  https://bfa4f7763318.ngrok.io.
+5. Далее эту ссылку необходимо проиписать в настройках любого приложения в ВЕБ ВЕРСИИ (Настройки -> Версия для Vk.com). И как основную ссылку и как для тестирования.
+6. Запустите ваше приложение. Например, по ссылке https://vk.com/app7516226. 
+7. ВЕДЬ Backaend уже задеплоен. Код находится в другом репзитории (https://github.com/Berezhnov/vkapirest), его подниматьн не нужно.
 
-`npx @vkontakte/create-vk-mini-app <app-directory-name>`
-
-### Create VK Mini App with Zeit deploy
-
-Firstly, you have to create Zeit account and connect it with your GitHub profile — https://zeit.co/
-
-`npx @vkontakte/create-vk-mini-app <app-directory-name> --zeit`
-
-### Create VK Mini App with Surge deploy
-
-Firstly, you have to create Surge account and Surge-domain — https://surge.sh/
-
-`npx @vkontakte/create-vk-mini-app <app-directory-name> --surge <surge-domain>`
-
-## How to start work with app
-
-Go to created folder and run:
-`yarn start` || `npm start` — this will start dev server with hot reload on `localhost:10888`.
-
-`yarn run build` || `npm run build` — this will build production bundle, with tree-shaking, uglify and all this modern fancy stuff
-
-[npm]: https://img.shields.io/npm/v/@vkontakte/create-vk-mini-app.svg
-[npm-url]: https://npmjs.com/package/@vkontakte/create-vk-mini-app
-
-[deps]: https://img.shields.io/david/vkcom/create-vk-mini-app.svg
-[deps-url]: https://david-dm.org/vkcom/create-vk-mini-app
+ВАЖНО: приложение разрабатывалось и тестировалось сразу в окружении Vk MINI APP через сайт. 
+Просто локально, без vk bridge, оно не запустится.
